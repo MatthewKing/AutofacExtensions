@@ -6,7 +6,7 @@
     using Autofac.Core;
 
     /// <summary>
-    /// Extension methods for Autofac..
+    /// Extension methods for Autofac.
     /// </summary>
     public static class AutofacExtensions
     {
