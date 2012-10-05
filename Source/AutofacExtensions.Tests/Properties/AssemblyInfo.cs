@@ -1,0 +1,5 @@
+﻿[assembly: System.Reflection.AssemblyTitle("AutofacExtensions.Tests")]
+[assembly: System.Reflection.AssemblyDescription("Test assembly for AutofacExtensions")]
+[assembly: System.Runtime.InteropServices.ComVisible(false)]
+[assembly: System.Runtime.InteropServices.Guid("79837eae-a4a5-4f8c-980b-c1569e9f098e")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DynamicProxyGenAssembly2")]
