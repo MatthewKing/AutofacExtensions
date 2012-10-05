@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AutofacExtensions.Embedded</id>
+    <version>1.0.0</version>
+    <title>AutofacExtensions (embedded)</title>
+    <description>Miscellaneous extension methods to make Autofac even more pleasant to work with.</description>
+    <authors>Matthew King</authors>
+    <language>en-US</language>
+    <projectUrl>https://github.com/MatthewKing/AutofacExtensions</projectUrl>
+    <licenseUrl>http://www.boost.org/LICENSE_1_0.txt</licenseUrl>
+    <tags>autofac extensions</tags>
+    <dependencies>
+      <dependency id="Autofac" version="2.4.2.696"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="AutofacExtensions.cs" target="content\AutofacExtensions.cs"/>
+  </files>
+</package>
