@@ -1,5 +1,7 @@
+New-Item -Name ..\Packages -ItemType Directory -Force
+
 # Build normal version...
-..\Source\.nuget\NuGet.exe pack ..\Source\AutofacExtensions\AutofacExtensions.csproj -OutputDirectory Packages\ -Build -Properties Configuration=Release
+..\Source\.nuget\NuGet.exe pack ..\Source\AutofacExtensions\AutofacExtensions.csproj -OutputDirectory ..\Packages\ -Build -Properties Configuration=Release
 
 # Build embedded version...
 $version = 'unknown'
@@ -9,5 +11,5 @@ Add-Content .\Temp\AutofacExtensions.cs ((Get-Content .\EmbeddedHeader.txt | For
 Add-Content .\Temp\AutofacExtensions.cs ''
 Add-Content .\Temp\AutofacExtensions.cs ((Get-Content ..\Source\AutofacExtensions\AutofacExtensions.cs) -replace 'public static class', 'internal static class')
 Copy-Item ..\Source\AutofacExtensions\AutofacExtensions.Embedded.nuspec .\Temp\
-..\Source\.nuget\NuGet.exe pack .\Temp\AutofacExtensions.Embedded.nuspec -OutputDirectory Packages\
+..\Source\.nuget\NuGet.exe pack .\Temp\AutofacExtensions.Embedded.nuspec -OutputDirectory ..\Packages\
 Remove-Item .\Temp\ -Recurse
