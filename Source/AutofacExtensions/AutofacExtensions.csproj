@@ -48,6 +48,8 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AutofacExtensions.cs" />
+    <Compile Include="GlobalParameterModule.cs" />
+    <Compile Include="GlobalPropertyModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
