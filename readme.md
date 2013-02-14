@@ -1,7 +1,7 @@
 AutofacExtensions
 =================
 
-AutofacExtensions adds two new extension methods for use with Autofac.
+AutofacExtensions adds some extension methods and helper modules to make Autofac more pleasant to use.
 
 Currently, if you want to wire up a resolved parameter, you have to do something like:
 
@@ -25,6 +25,26 @@ Resolved properties can be registered in the same way:
 builder.RegisterType<ExampleType>()
     .WithProperty("PropertyName", c => /* resolution logic here */)
     .InstancePerDependency();
+```
+
+If you have a named parameter that you want to add to every registration, you can use GlobalParameterModule:
+
+```csharp
+GlobalParameterModule module = new GlobalParameterModule();
+module.AddParameter("parameterOne", /* constant value here */);
+module.AddParameter("parameterTwo", c => /* resolution logic here */);
+
+builder.RegisterModule(module);
+```
+
+If you have a named property that you want to add to every registration, you can use GlobalPropertyModule:
+
+```csharp
+GlobalPropertyModule module = new GlobalPropertyModule();
+module.AddParameter("PropertyOne", /* constant value here */);
+module.AddParameter("PropertyTwo", c => /* resolution logic here */);
+
+builder.RegisterModule(module);
 ```
 
 Copyright
