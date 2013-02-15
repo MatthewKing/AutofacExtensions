@@ -41,8 +41,8 @@ If you have a named property that you want to add to every registration, you can
 
 ```csharp
 GlobalPropertyModule module = new GlobalPropertyModule();
-module.AddParameter("PropertyOne", /* constant value here */);
-module.AddParameter("PropertyTwo", c => /* resolution logic here */);
+module.AddProperty("PropertyOne", /* constant value here */);
+module.AddProperty("PropertyTwo", c => /* resolution logic here */);
 
 builder.RegisterModule(module);
 ```
