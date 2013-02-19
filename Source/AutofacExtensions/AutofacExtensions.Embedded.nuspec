@@ -16,5 +16,7 @@
   </metadata>
   <files>
     <file src="AutofacExtensions.cs" target="content\AutofacExtensions.cs"/>
+	<file src="GlobalParameterModule.cs" target="content\GlobalParameterModule.cs"/>
+	<file src="GlobalPropertyModule.cs" target="content\GlobalPropertyModule.cs"/>
   </files>
 </package>
