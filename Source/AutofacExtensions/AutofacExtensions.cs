@@ -2,6 +2,7 @@
 {
     using System;
     using System.Reflection;
+    using Autofac;
     using Autofac.Builder;
     using Autofac.Core;
 
