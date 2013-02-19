@@ -28,7 +28,7 @@
         /// </summary>
         /// <param name="name">The name of the parameter.</param>
         /// <param name="value">The parameter value.</param>
-        public void AddParameter(string name, object value)
+        public GlobalParameterModule AddParameter(string name, object value)
         {
             if (name == null)
                 throw new ArgumentNullException(
@@ -43,6 +43,8 @@
             NamedParameter parameter = new NamedParameter(name, value);
 
             this.parameters.Add(parameter);
+
+            return this;
         }
 
         /// <summary>
@@ -50,7 +52,7 @@
         /// </summary>
         /// <param name="name">The name of the parameter.</param>
         /// <param name="valueAccessor">A function that supplies the parameter value.</param>
-        public void AddParameter(string name, Func<IComponentContext, object> valueAccessor)
+        public GlobalParameterModule AddParameter(string name, Func<IComponentContext, object> valueAccessor)
         {
             if (name == null)
                 throw new ArgumentNullException(
@@ -72,6 +74,8 @@
                 (p, c) => valueAccessor(c));
 
             this.parameters.Add(parameter);
+
+            return this;
         }
 
         /// <summary>

@@ -39,7 +39,7 @@
         /// </summary>
         /// <param name="name">The name of the property.</param>
         /// <param name="value">The property value.</param>
-        public void AddProperty(string name, object value)
+        public GlobalPropertyModule AddProperty(string name, object value)
         {
             if (name == null)
                 throw new ArgumentNullException(
@@ -52,6 +52,8 @@
                     "name");
 
             this.propertiesConstant[name] = value;
+
+            return this;
         }
 
         /// <summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="name">The name of the property.</param>
         /// <param name="valueAccessor">A function that supplies the property value.</param>
-        public void AddProperty(string name, Func<IComponentContext, object> valueAccessor)
+        public GlobalPropertyModule AddProperty(string name, Func<IComponentContext, object> valueAccessor)
         {
             if (name == null)
                 throw new ArgumentNullException(
@@ -77,6 +79,8 @@
                     "valueAccessor should not be null.");
 
             this.propertiesResolved[name] = valueAccessor;
+
+            return this;
         }
 
         /// <summary>
