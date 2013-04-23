@@ -41,6 +41,7 @@
         /// </summary>
         /// <param name="name">The name of the property.</param>
         /// <param name="value">The property value.</param>
+        /// <returns>This GlobalPropertyModule instance.</returns>
         public GlobalPropertyModule AddProperty(string name, object value)
         {
             if (name == null)
@@ -63,6 +64,7 @@
         /// </summary>
         /// <param name="name">The name of the property.</param>
         /// <param name="valueAccessor">A function that supplies the property value.</param>
+        /// <returns>This GlobalPropertyModule instance.</returns>
         public GlobalPropertyModule AddProperty(string name, Func<IComponentContext, object> valueAccessor)
         {
             if (name == null)

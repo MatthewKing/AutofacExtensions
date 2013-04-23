@@ -29,6 +29,7 @@
         /// </summary>
         /// <param name="name">The name of the parameter.</param>
         /// <param name="value">The parameter value.</param>
+        /// <returns>This GlobalParameterModule instance.</returns>
         public GlobalParameterModule AddParameter(string name, object value)
         {
             if (name == null)
@@ -53,6 +54,7 @@
         /// </summary>
         /// <param name="name">The name of the parameter.</param>
         /// <param name="valueAccessor">A function that supplies the parameter value.</param>
+        /// <returns>This GlobalParameterModule instance.</returns>
         public GlobalParameterModule AddParameter(string name, Func<IComponentContext, object> valueAccessor)
         {
             if (name == null)
