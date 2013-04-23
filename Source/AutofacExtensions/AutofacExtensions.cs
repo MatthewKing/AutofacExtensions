@@ -56,8 +56,10 @@
                     "valueAccessor",
                     "valueAccessor should not be null.");
 
+            const StringComparison sc = StringComparison.Ordinal;
+
             ResolvedParameter parameter = new ResolvedParameter(
-                (p, c) => String.Equals(p.Name, parameterName),
+                (p, c) => String.Equals(p.Name, parameterName, sc),
                 (p, c) => valueAccessor(c));
 
             return registration.WithParameter(parameter);
@@ -108,12 +110,14 @@
                     "valueAccessor",
                     "valueAccessor should not be null.");
 
+            const StringComparison sc = StringComparison.Ordinal;
+
             ResolvedParameter parameter = new ResolvedParameter(
                 (p, c) =>
                 {
                     MethodInfo m = p.Member as MethodInfo;
-                    return (m != null && m.IsSpecialName && m.Name.StartsWith("set_"))
-                        ? String.Equals(propertyName, m.Name.Substring(4))
+                    return (m != null && m.IsSpecialName && m.Name.StartsWith("set_", sc))
+                        ? String.Equals(propertyName, m.Name.Substring(4), sc)
                         : false;
                 },
                 (p, c) => valueAccessor(c));

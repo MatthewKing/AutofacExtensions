@@ -70,8 +70,10 @@
                     "valueAccessor",
                     "valueAccessor should not be null.");
 
+            const StringComparison sc = StringComparison.Ordinal;
+
             ResolvedParameter parameter = new ResolvedParameter(
-                (p, c) => String.Equals(p.Name, name),
+                (p, c) => String.Equals(p.Name, name, sc),
                 (p, c) => valueAccessor(c));
 
             this.parameters.Add(parameter);

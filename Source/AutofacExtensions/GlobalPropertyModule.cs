@@ -31,8 +31,9 @@
         /// </summary>
         public GlobalPropertyModule()
         {
-            this.propertiesConstant = new Dictionary<string, object>();
-            this.propertiesResolved = new Dictionary<string, Func<IComponentContext, object>>();
+            StringComparer sc = StringComparer.Ordinal;
+            this.propertiesConstant = new Dictionary<string, object>(sc);
+            this.propertiesResolved = new Dictionary<string, Func<IComponentContext, object>>(sc);
         }
 
         /// <summary>
